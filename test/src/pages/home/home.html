@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Ionic Blank
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ngx-braintree 
+  [clientTokenURL]="'http://127.0.0.1:5000/client_token'" 
+  [createPurchaseURL]="'http://127.0.0.1:5000/checkout'" 
+  [chargeAmount]="55.55"
+  (paymentStatus)="onPaymentStatus($event)"
+  [buttonText]="'Pay'"
+  [allowChoose]="true"
+  [showCardholderName]="true"
+  [enablePaypalCheckout] = "false"
+  [currency]="'USD'"
+  [enablePaypalVault] = "true"
+  [enabledStyle]="enabledStyle"
+  [disabledStyle]="disabledStyle"
+  >
+
+  <div class="ngxLoader"><img src="../assets/images/loader.gif"></div>
+  </ngx-braintree>
+
+
+
+</ion-content>
